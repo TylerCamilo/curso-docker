@@ -141,3 +141,14 @@ docker run -it --rm -d -p 127.0.0.1:8081:80 --name web nginx :
             TAmbien podemos personalziar una red
 
             docker network create "nombreREd"
+
+#PUBLICACION DE IMAGENES
+
+    Tener en cuenta que el el repository "nombre de images" debe tener el alis tuyo en docker hub: quedando asi el comando
+
+    # docker push tylercamilo/web:latest
+
+# EXPLORACION DE CONTENEDORES DOCKER Y SUS COMANDOS BASICOS
+
+    SI el ficher .ssh/entrypoint, determina la salud del conetedos is llega a star mal elk contenedor falla
+    

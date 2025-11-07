@@ -1,0 +1,19 @@
+version: '3.7'  # Especifica la versión del formato de docker-compose (3.7 es una versión estable)
+
+services:  # Define la sección donde se declaran todos los servicios/contenedores
+  backend:  # Nombre del primer servicio (aplicación backend)
+    image: backend  # Nombre que se le dará a la imagen Docker construida
+    build:  # Configuración para construir la imagen desde un Dockerfile
+      context: ./backend  # Directorio donde se encuentra el código fuente y el Dockerfile
+      dockerfile: Dockerfile  # Nombre del archivo Dockerfile a usar (por defecto es "Dockerfile")
+    ports:  # Mapeo de puertos entre el contenedor y el host
+      - 5000:5000  # Puerto 5000 del host se mapea al puerto 5000 del contenedor
+  frontend:  # Nombre del segundo servicio (aplicación frontend)
+    image: frontend  # Nombre que se le dará a la imagen Docker construida
+    build:  # Configuración para construir la imagen desde un Dockerfile
+      context: ./frontend  # Directorio donde se encuentra el código fuente y el Dockerfile
+      dockerfile: Dockerfile  # Nombre del archivo Dockerfile a usar (por defecto es "Dockerfile")
+    ports:  # Mapeo de puertos entre el contenedor y el host
+      - 8080:80  # Puerto 8080 del host se mapea al puerto 80 del contenedor
+    depends_on:  # Define dependencias entre servicios (este servicio espera a que otros estén listos)
+      - backend  # El servicio frontend espera a que el servicio backend esté iniciado
