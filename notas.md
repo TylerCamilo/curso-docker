@@ -151,4 +151,8 @@ docker run -it --rm -d -p 127.0.0.1:8081:80 --name web nginx :
 # EXPLORACION DE CONTENEDORES DOCKER Y SUS COMANDOS BASICOS
 
     SI el ficher .ssh/entrypoint, determina la salud del conetedos is llega a star mal elk contenedor falla
+
+# Despliegue de aplicaciones con Docker Compose: Frontend y Backend
+
+
     
